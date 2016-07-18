@@ -1,0 +1,47 @@
+
+<div class="panel panel-profile">
+        <div class="panel-heading text-center  bg-success">
+<h1 ng-show="!authDetails.authenticated"><a href="#/"><img ng-src="../../images/angularjs.jpg" width="42" class="img-circle img85_85" /></a></h1>
+<h1 ng-show="authDetails.authenticated"><a href="#/"><img ng-src="{{authDetails.mimeType}},{{authDetails.file}}" width="33" class="img-circle img480_480" /></a></h1>
+
+      </div>
+          </div>
+
+
+
+
+
+
+<nav class="links" ng-controller="headerSrv">
+
+<ul >
+
+
+  <li ng-show="hasAnyPermission(['ROLE_ADMIN'])"><a href="#/packagee">Pacotes</a></li>
+    <li ng-show="hasAnyPermission(['ROLE_ADMIN'])"><a href="#/user">Usuários</a></li>
+     <li ng-show="hasAnyPermission(['ROLE_ADMIN'])"><a href="#/jasper">Jasper</a></li>
+      <li ng-show="hasAnyPermission(['ROLE_USER'])"><a href="#/validar">Formulário</a></li>
+
+        <li ng-show="hasAnyPermission(['ROLE_ADMIN'])"><a href="#/file">Upload</a></li>
+         <li ng-show="hasAnyPermission(['ROLE_USER'])"><a href="/src/uploadprogress/uploadprogress.html">Upload-Barra-progresso</a></li>
+          <li ng-show="hasAnyPermission(['ROLE_ADMIN'])"><a href="#/uploadprogress">Upload-teste</a></li>
+            <li ng-show="hasAnyPermission(['ROLE_ADMIN'])"><a href="#/pesquisaUpload">Pesquisa File</a></li>
+            <li ng-show="hasAnyPermission(['ROLE_ADMIN','ROLE_USER'])"><a href="#/editUser">Edit User</a></li>
+
+
+
+
+    <li ng-show="!authDetails.authenticated"><a href="#/login"><i class="fa fa-user-plus"   aria-hidden="true"></i><span>Login</span></a></li>
+    <li ng-show="authDetails.authenticated"><a href="#/" ng-click="logout()"><i class="fa fa-sign-out"   aria-hidden="true"></i><span>Sair</span></a></li>
+
+  </ul>
+</nav>
+
+
+<nav class="main">
+  <ul>
+    <li class="menu">
+      <a class="fa-bars" href="#menu">Menu</a>
+    </li>
+  </ul>
+</nav>
